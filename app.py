@@ -372,13 +372,27 @@ if not st.session_state.search_done:
 
 # ---------- DECISION ENGINE ----------
 
-score=8
+score = 10
 
-if emi_ratio>.5:
-    score-=3
+# EMI stress scoring
+if emi_ratio > 0.55:
+    score -= 5
 
-elif emi_ratio>.35:
-    score-=1
+elif emi_ratio > 0.45:
+    score -= 3
+
+elif emi_ratio > 0.35:
+    score -= 2
+
+elif emi_ratio > 0.25:
+    score -= 1
+
+# Budget realism
+if budget > (salary*12)/2:
+    score -= 1
+
+# Clamp score
+score = max(1,min(score,10))
 
 score=max(1,min(score,10))
 
