@@ -427,12 +427,18 @@ with c1:
     st.write(st.session_state.ai)
 
 with c2: 
-    if score >= 8:
-        score_color = "#22c55e"   # green
-    elif score >=5:
-        score_color = "#f59e0b"   # amber
-    else:
-        score_color = "#ef4444"   # red
+
+if score >= 8:
+    score_color = "#22c55e"   # green
+    score_label = "Strong"
+
+elif score >=5:
+    score_color = "#f59e0b"   # amber
+    score_label = "Balanced"
+
+else:
+    score_color = "#ef4444"   # red
+    score_label = "Risky"
 
 
     st.markdown(f"""
@@ -444,12 +450,21 @@ with c2:
     font-size:42px;
     color:{score_color};
     font-weight:700;
+    margin-bottom:5px;
     ">
 
     {score}/10
 
     </h1>
 
+    <p style="
+    color:{score_color};
+    font-weight:600;
+    ">
+
+    {score_label} Position
+
+    </p>
     </div>
     """,unsafe_allow_html=True)
 
