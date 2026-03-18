@@ -428,17 +428,17 @@ with c1:
 
 with c2: 
 
-if score >= 8:
-    score_color = "#22c55e"   # green
-    score_label = "Strong"
+    if score >= 8:
+        score_color = "#22c55e"   # green
+        score_label = "Strong"
 
-elif score >=5:
-    score_color = "#f59e0b"   # amber
-    score_label = "Balanced"
+    elif score >=5:
+        score_color = "#f59e0b"   # amber
+        score_label = "Balanced"
 
-else:
-    score_color = "#ef4444"   # red
-    score_label = "Risky"
+    else:
+        score_color = "#ef4444"   # red
+        score_label = "Risky"
 
 
     st.markdown(f"""
