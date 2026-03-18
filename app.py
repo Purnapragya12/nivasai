@@ -287,7 +287,7 @@ st.sidebar.title("🔍 Property Filters")
 
 city=st.sidebar.selectbox(
 "City",
-["Patna","Coimbatore","Ayodhya","Delhi NCR","Mumbai","Bangalore","Chennai","Pondicherry","Neemrana","Munger","Prayagraj"]
+["Patna","Munger","Chennai","Hyderabad","Vishakhapatnam",,"Prayagraj","Coimbatore","Ayodhya","Delhi NCR","Mumbai","Bangalore","Pondicherry","Neemrana"]
 )
 
 budget=st.sidebar.slider(
