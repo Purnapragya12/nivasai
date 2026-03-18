@@ -303,10 +303,15 @@ st.markdown(
 
 # ---------- GROQ ----------
 
-client = Groq(
-    api_key=st.secrets["GROQ_API_KEY"]
-)
+import os
 
+api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+
+if not api_key:
+    st.error("API key not configured")
+    st.stop()
+
+client = Groq(api_key=api_key)
 # ---------- SIDEBAR ----------
 
 st.sidebar.title("🔍 Property Filters")
